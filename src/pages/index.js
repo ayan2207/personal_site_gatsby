@@ -1,7 +1,9 @@
 import React from "react"
+import { Container, Button, Jumbotron } from 'react-bootstrap'
 import { graphql, useStaticQuery } from 'gatsby'
 
-const IndexPage = () => {
+const IndexPage = () =>
+{
   const data = useStaticQuery(graphql`
   {
     site {
@@ -14,11 +16,15 @@ const IndexPage = () => {
   }
 `)
   return (
-    <div>
-      <h1>{data.site.siteMetadata.title}</h1>
-      <h2>{data.site.siteMetadata.tagline}</h2>
-      <p>This is v2 of this site split test</p>
-    </div>
+    <Container fluid>
+      <Jumbotron>
+        <h1>{data.site.siteMetadata.title}</h1>
+        <p>{data.site.siteMetadata.tagline}</p>
+        <p>
+          <Button variant="primary">Say Hi</Button>
+        </p>
+      </Jumbotron>
+    </Container>
   )
 }
 
