@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
         title: 'Personal Site',
-        author: 'Andrew Mead',
+        author: 'Ayan Hedayati',
         tagline: 'This is my personal site created with Gatsby.js'
     },
     plugins: [
