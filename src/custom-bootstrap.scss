@@ -1,0 +1,38 @@
+// Your variable overrides
+
+$theme-colors: (
+	"primary": #36125c,
+	"secondary": lighten(#36125c, 18%),
+	"danger": #ff4136,
+	"success": $success,
+	"info":$info,
+	"warning":$warning,
+	"light":$light,
+	"dark":$dark
+);
+
+$body-bg: map-get($theme-colors, "light");
+
+body {
+	// background-attachment: fixed;
+	// background: url("https://www.transparenttextures.com/patterns/black-lozenge.png"),
+	// 	radial-gradient(circle 700px, lighten($body-bg, 15%), $body-bg);
+}
+
+// Bootstrap and its default variables
+@import "node_modules/bootstrap/scss/bootstrap";
+// @import "node_modules/bootstrap/scss/_variables";
+@import "node_modules/bootstrap/scss/_functions";
+
+@include media-breakpoint-down(sm) {
+	.display-4 {
+		font-size: 35px
+	}
+	.card-hover {
+		&:hover {
+			transform: scale(1);
+			box-shadow: none;
+		}
+	}
+}
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
