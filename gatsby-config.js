@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-        title: 'Personal Site',
+        title: 'Hello World.',
         author: 'Ayan Hedayati',
         tagline: 'This is my personal site created with Gatsby.js'
     },
