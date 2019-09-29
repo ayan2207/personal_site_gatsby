@@ -22,17 +22,18 @@
     "gatsby-plugin-sharp": "^2.0.32",
     "gatsby-remark-images": "^3.0.10",
     "gatsby-remark-relative-images": "^0.2.2",
-    "gatsby-source-contentful": "^2.0.47",
     "gatsby-source-filesystem": "^2.0.28",
     "gatsby-transformer-remark": "^2.3.8",
     "node-sass": "^4.11.0",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.12",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-twitter-embed": "^2.0.8"
   },
   "devDependencies": {
     "env-cmd": "^8.0.2",
+    "gatsby-plugin-manifest": "^2.2.20",
     "prettier": "^1.16.4"
   },
   "repository": {
