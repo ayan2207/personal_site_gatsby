@@ -80,7 +80,7 @@ export default class IndexPage extends Component {
                   <div className='text-card'>
                     <div className='title'>Contact</div>
                     <div className='subtitle' />
-                    <form name="contact" method="POST" data-netlify="true" action="/blog">
+                    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
                       <div class='form-row'>
                         <div class='form-group col-md-12'>
                           <label for='inputName'>Name</label>
