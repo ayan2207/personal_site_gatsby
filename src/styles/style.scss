@@ -1,7 +1,4 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
-@import "./variables";
-@import "./home";
-@import "./layout";
 
 // Your variable overrides
 
@@ -17,16 +14,16 @@
 // );
 
 $body-bg: #111;
-html, body {
-	height: 100%;
-	display: flex;
-	flex: 1;
-}
+// html, body {
+// 	height: 100%;
+// 	display: flex;
+// 	flex: 1;
+// }
 
-#___gatsby {
-  display: flex;
-  flex:1;
-}
+// #___gatsby {
+//   display: flex;
+//   flex:1;
+// }
 div[role="group"][tabindex] {
   display: flex;
   flex-direction: column;
@@ -41,6 +38,10 @@ div[role="group"][tabindex] {
 
 // $link-color: map-get($theme-colors, "light");
 // $link-hover-color: map-get($theme-colors, "primary");
+
+@import "./variables";
+@import "./home";
+@import "./layout";
 
 // Bootstrap and its default variables
 @import "node_modules/bootstrap/scss/bootstrap";

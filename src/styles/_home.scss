@@ -1,11 +1,15 @@
 .skills-container {
   background-color: #0c0c0c;
+  padding-top: 15px;
   .tweet-timeline {
-    background-color: #121212;
+    background-color: hsl(0, 0%, 7%);
     border-radius: 5px;
   }
   .text-card {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: $body-bg;
+    border-radius: 5px;
     .title {
       font-size: $font-size-lg;
     }
@@ -14,26 +18,76 @@
       margin-bottom: 12px;
       color: $text-muted;
     }
+    .social-pills {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-gap: 5px;
+      .social-item {
+        padding: 10px;
+        svg {
+          font-size: 44px;
+        }
+      }
+    }
   }
+  
 }
 
 .hero-container {
   // max-width: 650px;
+  height: calc(100vh - 50px);
+  .person {
+    display: flex;
+  }
+  .floating {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+  }
   .avatar {
     margin-bottom: 10px;
     svg {
       width: 270px;
     }
   }
+  .hastags {
+    font-size: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    div {
+      padding: 10px;
+      background: darken($secondary, 25%);
+      margin-right: 5px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+  }
 }
 
 @include media-breakpoint-down(xs) {
   .hero-container {
+    .hastags {
+      font-size: 13px;
+    }
+    .occupation {
+      font-size: 15px !important;
+    }
     .avatar {
       svg {
         width: 150px;
         height: 160px;
       }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .hero-container {
+    .hastags {
+      font-size: 15px;
+    }
+    .occupation {
+      font-size: 17px;
     }
   }
 }
