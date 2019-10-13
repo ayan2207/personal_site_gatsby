@@ -18,17 +18,6 @@
       margin-bottom: 12px;
       color: $text-muted;
     }
-    .social-pills {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-gap: 5px;
-      .social-item {
-        padding: 10px;
-        svg {
-          font-size: 44px;
-        }
-      }
-    }
   }
   
 }
@@ -62,15 +51,25 @@
       border-radius: 5px;
     }
   }
+  .social-pills {
+    .social-item {
+      padding: 10px;
+      svg {
+        font-size: 44px;
+      }
+    }
+  }
 }
 
 @include media-breakpoint-down(xs) {
   .hero-container {
-    .hastags {
-      font-size: 13px;
-    }
-    .occupation {
+    .occupation-container {
       font-size: 15px !important;
+    }
+    .hero-title-container {
+      h2 {
+        margin-bottom: 25px
+      }
     }
     .avatar {
       svg {
@@ -81,12 +80,12 @@
   }
 }
 
-@include media-breakpoint-down(sm) {
+@include media-breakpoint-down(md) {
   .hero-container {
     .hastags {
       font-size: 15px;
     }
-    .occupation {
+    .occupation-container {
       font-size: 17px;
     }
   }

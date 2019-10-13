@@ -1,10 +1,37 @@
-// $card-spacer-y:
-// $card-spacer-x:
-// $card-border-width:
-// $card-border-radius:
-// $card-border-color:
-// $card-inner-border-radius:
-// $card-cap-bg:
-// $card-cap-color:
-$card-color: white;
-$card-bg: transparent;
+// // $theme-colors: (
+// // 	"primary": #36125c,
+// // 	"secondary": lighten(#36125c, 18%),
+// // 	"danger": #ff4136,
+// // 	"success": $success,
+// // 	"info":$info,
+// // 	"warning":$warning,
+// // 	"light":$light,
+// // 	"dark":$dark
+// // );
+
+$body-bg: #111;
+
+// Fonts
+$font-family-base: 'Open Sans', 'Helvetica Neue', Arial, sans-serif,
+  -apple-system;
+$font-family-heading: 'Lora', 'Helvetica Neue', Arial, sans-serif, -apple-system;
+$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+$font-weight-thin: 200;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$font-weight-base: $font-weight-normal;
+$line-height-base: 1.6;
+
+$headings-font-weight: 400;
+
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 715px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1366px,
+  xxxl: 1920px
+);

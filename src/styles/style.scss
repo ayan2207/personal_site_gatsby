@@ -1,62 +1,69 @@
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+// Font
+@import url("https://fonts.googleapis.com/css?family=Lora:400|Open+Sans:400,700");
 
-// Your variable overrides
+// Overrides:
+@import "./variables";
 
-// $theme-colors: (
-// 	"primary": #36125c,
-// 	"secondary": lighten(#36125c, 18%),
-// 	"danger": #ff4136,
-// 	"success": $success,
-// 	"info":$info,
-// 	"warning":$warning,
-// 	"light":$light,
-// 	"dark":$dark
-// );
+// Bootstrap
+@import "node_modules/bootstrap/scss/_functions";
+@import "node_modules/bootstrap/scss/_variables";
+@import "node_modules/bootstrap/scss/_mixins";
+@import "node_modules/bootstrap/scss/_root";
+@import "node_modules/bootstrap/scss/_media";
+@import "node_modules/bootstrap/scss/_reboot";
+@import "node_modules/bootstrap/scss/_grid";
+@import "node_modules/bootstrap/scss/_type";
+@import "node_modules/bootstrap/scss/_navbar";
+@import "node_modules/bootstrap/scss/_nav";
+@import "node_modules/bootstrap/scss/_utilities";
 
-$body-bg: #111;
-// html, body {
-// 	height: 100%;
-// 	display: flex;
-// 	flex: 1;
-// }
+// Components
 
-// #___gatsby {
-//   display: flex;
-//   flex:1;
-// }
+// Pages
+@import "./home";
+@import "./layout";
+
 div[role="group"][tabindex] {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
-@include media-breakpoint-between(xs,sm){
+@include media-breakpoint-between(xs, sm) {
   .btn-sm-block {
-      width: 100%;
+    width: 100%;
   }
 }
 
-// $link-color: map-get($theme-colors, "light");
-// $link-hover-color: map-get($theme-colors, "primary");
-
-@import "./variables";
-@import "./home";
-@import "./layout";
-
-// Bootstrap and its default variables
-@import "node_modules/bootstrap/scss/bootstrap";
-// @import "node_modules/bootstrap/scss/_variables";
-@import "node_modules/bootstrap/scss/_functions";
-
 @include media-breakpoint-down(sm) {
-	.display-4 {
-		font-size: 35px
-	}
-	.card-hover {
-		&:hover {
-			transform: scale(1);
-			box-shadow: none;
-		}
-	}
+  .display-4 {
+    font-size: 35px;
+  }
+  .card-hover {
+    &:hover {
+      transform: scale(1);
+      box-shadow: none;
+    }
+  }
 }
-@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+
+// Display breakpoints for DEV
+// body:after {
+//   color: white;
+//   font-size: 12px;
+//   padding: 5px;
+//   font-weight: bold;
+//   right: 10px;
+//   position: fixed;
+//   text-align: center;
+//   text-transform: uppercase;
+//   bottom: 10px;
+//   width: 200px;
+//   z-index: 9999;
+//   border: solid 1px #000000;
+//   @each $name, $value in $grid-breakpoints {
+//     @include media-breakpoint-up($name) {
+//       content: "#{$name} - min-width: #{$value}";
+//     }
+//   }
+// }
