@@ -1,0 +1,92 @@
+.skills-container {
+  background-color: #0c0c0c;
+  padding-top: 15px;
+  .tweet-timeline {
+    background-color: hsl(0, 0%, 7%);
+    border-radius: 5px;
+  }
+  .text-card {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: $body-bg;
+    border-radius: 5px;
+    .title {
+      font-size: $font-size-lg;
+    }
+    .subtitle {
+      font-size: $font-size-sm;
+      margin-bottom: 12px;
+      color: $text-muted;
+    }
+  }
+  
+}
+
+.hero-container {
+  // max-width: 650px;
+  height: calc(100vh - 50px);
+  .person {
+    display: flex;
+  }
+  .floating {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+  }
+  .avatar {
+    margin-bottom: 10px;
+    svg {
+      width: 270px;
+    }
+  }
+  .hastags {
+    font-size: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    div {
+      padding: 10px;
+      background: darken($secondary, 25%);
+      margin-right: 5px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+  }
+  .social-pills {
+    .social-item {
+      padding: 10px;
+      svg {
+        font-size: 44px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .hero-container {
+    .occupation-container {
+      font-size: 15px !important;
+    }
+    .hero-title-container {
+      h2 {
+        margin-bottom: 25px
+      }
+    }
+    .avatar {
+      svg {
+        width: 150px;
+        height: 160px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .hero-container {
+    .hastags {
+      font-size: 15px;
+    }
+    .occupation-container {
+      font-size: 17px;
+    }
+  }
+}

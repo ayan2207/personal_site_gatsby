@@ -7,6 +7,7 @@
 
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import Helmet from 'react-helmet'
 
 // import { Container } from "react-bootstrap"
 
@@ -24,24 +25,31 @@ const Layout = ({ children, pageInfo }) => {
   `)
   console.log(data)
   return (
-    <div className="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <header className="masthead mb-auto">
-        <div className="inner">
-          <h3 className="masthead-brand">{data.site.siteMetadata.title}</h3>
-          <nav className="nav nav-masthead justify-content-center">
-            <a className="nav-link active" href="#">Home</a>
-            <a className="nav-link" href="#">Projects</a>
-            <a className="nav-link" href="#">Contact</a>
-          </nav>
-        </div>
-      </header>
-      {children}
-      <footer className="mastfoot mt-auto">
-        <div className="inner">
-          <a href="#">Get In Touch</a>
-        </div>
-      </footer>
-    </div>
+    <>
+      <Helmet
+        title={`Ayan Hedayati | ${data.site.siteMetadata.title} `}
+        meta={[
+          { name: data.site.siteMetadata.author, content: data.site.siteMetadata.tagline }
+        ]}
+      >
+      </Helmet>
+      <div className="container-fluid w-100 h-100 p-0 mx-auto flex-column">
+        <nav className="navbar navbar-expand justify-content-between sticky-top">
+          <h3 className="m-0 p-0 navbar-brand text-light align-items-center">> {data.site.siteMetadata.title} _</h3>
+          <div className="navbar-nav">
+            {/* <a className="p-1 nav-item nav-link active" href="#">Home</a>
+            <a className="p-1 nav-item nav-link" href="#">What I do</a>
+            <a className="p-1 nav-item nav-link d-none d-md-block" href="#">Contact</a> */}
+          </div>
+        </nav>
+        {children}
+        <footer className="mt-auto">
+          {/* <div className="inner">
+          <button className="btn btn-primary btn-lg btn-sm-block d-md-none" href="#">Get In Touch</button>
+        </div> */}
+        </footer>
+      </div>
+    </>
   )
 }
 

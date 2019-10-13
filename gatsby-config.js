@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-        title: 'Hello World.',
+        title: 'helloWorld.js',
         author: 'Ayan Hedayati',
         tagline: 'This is my personal site created with Gatsby.js'
     },
@@ -29,6 +29,17 @@ module.exports = {
                     }
                 ]
             }
-        }
+        },
+        {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+              name: `Ayan Hedayati`,
+              short_name: `Ayan Hedayati`,
+              start_url: `/`,
+              background_color: `#111`,
+              theme_color: `#111`,
+              display: `minimal-ui`,
+            },
+          }
     ]
 }
