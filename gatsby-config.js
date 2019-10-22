@@ -1,3 +1,7 @@
+
+require("dotenv").config({
+    path: `.env.${process.env.NODE_ENV}`,
+})
 module.exports = {
     siteMetadata: {
         title: 'helloWorld.js',
@@ -7,6 +11,15 @@ module.exports = {
     plugins: [
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-sass',
+        'gatsby-plugin-stripe',
+        {
+            resolve: `gatsby-source-stripe`,
+            options: {
+                objects: ["Sku"],
+                secretKey: process.env.STRIPE_SECRET_KEY,
+                downloadFiles: true,
+            },
+        },
         {
             resolve: 'gatsby-source-filesystem',
             options: {
@@ -33,13 +46,13 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-              name: `Ayan Hedayati`,
-              short_name: `Ayan Hedayati`,
-              start_url: `/`,
-              background_color: `#111`,
-              theme_color: `#111`,
-              display: `minimal-ui`,
+                name: `Ayan Hedayati`,
+                short_name: `Ayan Hedayati`,
+                start_url: `/`,
+                background_color: `#111`,
+                theme_color: `#111`,
+                display: `minimal-ui`,
             },
-          }
+        }
     ]
 }

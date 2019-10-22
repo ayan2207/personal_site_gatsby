@@ -80,16 +80,16 @@ export default class IndexPage extends Component {
                   </div>
                 </div>
                 <div className="d-flex text-light justify-content-center justify-content-sm-end social-pills">
-                  <a href="http://github.com//ayan2207" traget="_blank" className="social-item btn btn-dark">
+                  <a href="http://github.com//ayan2207" traget="_blank" className="social-item">
                     <FontAwesomeIcon icon={faGithub} style={{ color: 'white' }}/>
                   </a>
-                  <a href="https://www.instagram.com/ayaanhedayati/" traget="_blank" className="social-item btn btn-dark">
+                  <a href="https://www.instagram.com/ayaanhedayati/" traget="_blank" className="social-item">
                     <FontAwesomeIcon icon={faInstagram} style={{ color: '#d2765a' }}/>
                   </a>
-                  <a href="https://twitter.com/ayaanhedayati" traget="_blank" className="social-item btn btn-dark">
+                  <a href="https://twitter.com/ayaanhedayati" traget="_blank" className="social-item">
                     <FontAwesomeIcon icon={faTwitter} style={{ color: '#216af3' }}/>
                   </a>
-                  <a href="https://www.linkedin.com/in/ayanhedayati/" traget="_blank" className="social-item btn btn-dark">
+                  <a href="https://www.linkedin.com/in/ayanhedayati/" traget="_blank" className="social-item">
                     <FontAwesomeIcon icon={faLinkedin} style={{ color: '#149cff' }}/>
                   </a>
                 </div>

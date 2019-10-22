@@ -16,18 +16,35 @@
 @import "node_modules/bootstrap/scss/_navbar";
 @import "node_modules/bootstrap/scss/_nav";
 @import "node_modules/bootstrap/scss/_utilities";
+@import "node_modules/bootstrap/scss/buttons";
+@import "node_modules/bootstrap/scss/forms";
+@import "node_modules/bootstrap/scss/input-group";
+@import "node_modules/bootstrap/scss/card";
 
 // Components
 
 // Pages
 @import "./home";
 @import "./layout";
+@import "./_payme";
+
+html, body, #___gatsby {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+}
 
 div[role="group"][tabindex] {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+  height: 100%;
 }
+
+// div[role="group"][tabindex] {
+//   display: flex;
+//   flex-direction: column;
+//   flex-grow: 1;
+// }
 
 @include media-breakpoint-between(xs, sm) {
   .btn-sm-block {

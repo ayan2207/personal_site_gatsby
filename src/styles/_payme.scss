@@ -1,0 +1,12 @@
+.payment-container {
+  height: calc(100% - 48px);
+  .form-control {
+    color: white;
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .payment-container > div {
+    height: 100%;
+  }
+}
