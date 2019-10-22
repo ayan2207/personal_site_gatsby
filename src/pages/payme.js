@@ -22,7 +22,7 @@ class Payme extends React.Component {
     return (
       <Layout>
         <div className="payment-container d-flex">
-          <div className="bg-dark m-auto">
+          <div className="form-container bg-dark m-auto">
             <div class="card text-white bg-dark">
               <div className="card-header bg-primary">
                 <h3 className="m-0">

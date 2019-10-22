@@ -5,8 +5,13 @@
   }
 }
 
+.payment-container > div {
+  width: 500px;
+}
+
 @include media-breakpoint-down(xs) {
   .payment-container > div {
     height: 100%;
+    width: 100%;
   }
 }
