@@ -5,7 +5,7 @@ require("dotenv").config({
 
 module.exports = {
     siteMetadata: {
-        title: 'helloWorld.js',
+        title: 'ayaanhedayati.com',
         author: 'Ayan Hedayati',
         tagline: 'This is my personal site created with Gatsby.js'
     },
