@@ -32,7 +32,7 @@ class Payme extends React.Component {
                   </h3>
               </div>
               <div class="card-body">
-                <StripeProvider apiKey="pk_test_oVylo2PyTlq437oKJl2QrtSR003M7n6hHm">
+                <StripeProvider apiKey={process.env.GATSBY_STRIPE_PUBLIC_KEY}>
                   <Elements>
                     <CheckoutForm />
                   </Elements>
