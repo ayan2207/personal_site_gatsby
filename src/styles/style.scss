@@ -1,11 +1,9 @@
 // Font
 @import url("https://fonts.googleapis.com/css?family=Lora:400|Open+Sans:400,700");
 
-// Overrides:
-@import "./variables";
-
 // Bootstrap
 @import "node_modules/bootstrap/scss/_functions";
+@import "./variables";
 @import "node_modules/bootstrap/scss/_variables";
 @import "node_modules/bootstrap/scss/_mixins";
 @import "node_modules/bootstrap/scss/_root";
@@ -23,11 +21,12 @@
 @import "node_modules/bootstrap/scss/badge";
 @import "node_modules/bootstrap/scss/alert";
 
+
 // Components
 
 // Pages
 @import "./home";
-@import "./layout";
+@import "./_layout";
 @import "./_payme";
 
 html, body, #___gatsby {

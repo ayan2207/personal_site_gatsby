@@ -8,7 +8,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Helmet from 'react-helmet'
-
+import '../styles/style.scss'
 // import { Container } from "react-bootstrap"
 
 const Layout = ({ children, pageInfo }) => {

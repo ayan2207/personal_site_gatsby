@@ -73,32 +73,32 @@ class CheckoutForm extends Component {
 
   validateField = () => {
     console.log('validating')
-    let errors = {
-      ...this.state.errors,
-      firstname: null,
-      lastname: null,
-      amount: null,
-    }
-    const { firstname, lastname, amount, cardCvc, cardNumber, cardExpiry } = this.state
-    if (!firstname || firstname.length === 0) {
-      errors.firstname = "Firstname cannot be empty"
-    }
-    if (!lastname || lastname.length === 0) {
-      errors.lastname = "Lastname cannot be empty"
-    }
-    if (!amount || amount === 0) {
-      errors.amount = "Enter amount greater than 0"
-    }
-    if (!cardCvc || cardCvc.length === 0) {
-      errors.cardCvc = "CVC cannot be empty"
-    }
-    if (!cardNumber || cardNumber.length === 0) {
-      errors.cardNumber = "Card number cannot be empty"
-    }
-    if (!cardExpiry || cardExpiry.length === 0) {
-      errors.cardExpiry = "Expiry cannot be empty"
-    }
     return new Promise((resolve) => {
+      let errors = {
+        ...this.state.errors,
+        firstname: null,
+        lastname: null,
+        amount: null,
+      }
+      const { firstname, lastname, amount, cardCvc, cardNumber, cardExpiry } = this.state
+      if (!firstname || firstname.length === 0) {
+        errors.firstname = "Firstname cannot be empty"
+      }
+      if (!lastname || lastname.length === 0) {
+        errors.lastname = "Lastname cannot be empty"
+      }
+      if (!amount || amount === 0) {
+        errors.amount = "Enter amount greater than 0"
+      }
+      if (!cardCvc || cardCvc.length === 0) {
+        errors.cardCvc = "CVC cannot be empty"
+      }
+      if (!cardNumber || cardNumber.length === 0) {
+        errors.cardNumber = "Card number cannot be empty"
+      }
+      if (!cardExpiry || cardExpiry.length === 0) {
+        errors.cardExpiry = "Expiry cannot be empty"
+      }
       this.setState({ errors }, () => {
         console.log('state done')
         return resolve()

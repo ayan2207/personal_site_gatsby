@@ -10,6 +10,7 @@ module.exports = {
         tagline: 'This is my personal site created with Gatsby.js'
     },
     plugins: [
+        'gatsby-plugin-sass',
         {
             resolve: `gatsby-source-stripe`,
             options: {
@@ -19,7 +20,6 @@ module.exports = {
             },
         },
         'gatsby-plugin-react-helmet',
-        'gatsby-plugin-sass',
         'gatsby-plugin-stripe',
         {
             resolve: 'gatsby-source-filesystem',
