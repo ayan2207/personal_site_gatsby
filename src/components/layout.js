@@ -8,11 +8,12 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Helmet from 'react-helmet'
+import SEO from './SEO'
 import '../styles/style.scss'
 import { config } from '@fortawesome/fontawesome-svg-core'
 config.autoAddCss = false
 
-const Layout = ({ children, pageInfo }) => {
+const Layout = ({ children, pageInfo, path }) => {
   const data = useStaticQuery(graphql`
     {
       site {
@@ -24,19 +25,12 @@ const Layout = ({ children, pageInfo }) => {
       }
     }
   `)
-  console.log(data)
   return (
     <>
-      <Helmet
-        title={`Ayan Hedayati | ${data.site.siteMetadata.title} `}
-        meta={[
-          { name: data.site.siteMetadata.author, content: data.site.siteMetadata.tagline }
-        ]}
-      >
-      </Helmet>
+      <SEO />
       <div className="container-fluid w-100 h-100 p-0 mx-auto flex-column">
         <nav className="navbar navbar-expand justify-content-between sticky-top">
-          <h3 className="m-0 p-0 navbar-brand text-light align-items-center">> {data.site.siteMetadata.title} _</h3>
+          {path !== "/" && <h3 className="m-0 p-0 navbar-brand text-light align-items-center">> {data.site.siteMetadata.title} _</h3>}
           <div className="navbar-nav">
             {/* <a className="p-1 nav-item nav-link active" href="#">Home</a>
             <a className="p-1 nav-item nav-link" href="#">What I do</a>

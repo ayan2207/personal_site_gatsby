@@ -34,7 +34,7 @@ export default class IndexPage extends Component {
   render() {
     const { accessoriesType, eyeType, mouthType } = this.state.mood
     return (
-      <Layout>
+      <Layout {...this.props}>
         <main role='main' class='inner cover'>
           <div
             className='hero-container m-auto row justify-content-center align-items-center p-4'
