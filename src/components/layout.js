@@ -9,7 +9,8 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Helmet from 'react-helmet'
 import '../styles/style.scss'
-// import { Container } from "react-bootstrap"
+import { config } from '@fortawesome/fontawesome-svg-core'
+config.autoAddCss = false
 
 const Layout = ({ children, pageInfo }) => {
   const data = useStaticQuery(graphql`
