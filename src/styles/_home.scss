@@ -25,8 +25,26 @@
 .hero-container {
   // max-width: 650px;
   height: calc(100vh - 50px);
+
+  .title{
+    animation-name: slideDown;  
+    animation-duration: 1s;	  
+    animation-timing-function: ease-out;
+  }
+
+  .subtitle{
+    animation-name: slideDown;  
+    animation-duration: 0.5s;	  
+    animation-timing-function: ease-in;
+  }
+
   .person {
     display: flex;
+    svg {
+      #Hoodie {
+        fill: $primary;
+      }
+    }
   }
   .floating {
     position: absolute;
@@ -61,20 +79,50 @@
   }
 }
 
+@keyframes slideDown {
+	0% {
+		transform: translateY(-300px);
+	}
+	50%{
+		transform: translateY(8%);
+	}		
+	100% {
+		transform: translateY(0%);
+	}		
+}
+
+@keyframes slideUp {
+	0% {
+		transform: translateY(-100%);
+	}
+	50%{
+		transform: translateY(8%);
+	}		
+	100% {
+		transform: translateY(0%);
+	}		
+}
+
 @include media-breakpoint-down(xs) {
   .hero-container {
     .occupation-container {
       font-size: 15px !important;
     }
     .hero-title-container {
-      h2 {
-        margin-bottom: 25px
+      .title {
+        h2 {
+          margin-bottom: 5px
+        }
+      }
+      .subtitle{
+        p {
+          font-size: 14px;
+        }
       }
     }
     .avatar {
       svg {
-        width: 150px;
-        height: 160px;
+        height: 220px;
       }
     }
   }

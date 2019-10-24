@@ -3,7 +3,7 @@ import Avatar from 'avataaars'
 import { TwitterTimelineEmbed } from 'react-twitter-embed'
 import Layout from '../components/layout'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAt, faBriefcase, faLocationArrow, faMapMarker } from '@fortawesome/free-solid-svg-icons'
+import { faAt, faBriefcase, faMapMarkerAlt, faMapMarker } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faInstagram, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 const moods = {
@@ -60,22 +60,26 @@ export default class IndexPage extends Component {
                 />
               </div>
               <div class='hero-title-container d-flex justify-content-center flex-column'>
-                <h2 className='h2 text-light'>Hi, I'm Ayaan.</h2>
-                <p className='text-light font-italic mb-5'>I specialise in Web Development as well as... </p>
-                <div className="hastags text-light justify-content-center justify-content-sm-start">
+                <div className="title">
+                  <h2 className='h2 text-light p-2 d-inline-block badge-primary rounded'>Hi, I'm Ayaan.</h2>
+                </div>
+                <div className="subtitle">
+                  <p className='p text-light p-2 mb-5 d-inline-block badge-secondary rounded'>I am a Web Developer and have a love for Design and Technology.</p>
+                </div>
+                {/* <div className="hastags text-light justify-content-center justify-content-sm-start">
                   <div>Web & App Design</div>
                   <div>SEO</div>
                   <div>React</div>
                   <div>Javascript</div>
                   <div>Branding</div>
-                </div>
+                </div> */}
                 <div className="occupation-container d-flex text-light h4 mt-4 justify-content-center justify-content-sm-end">
                   <div className="my-3 mr-4">
                     <FontAwesomeIcon icon={faBriefcase} style={{ marginRight: '7px', color: '#c57105' }} />
                     Software Engineer
                   </div>
                   <div className="my-3">
-                    <FontAwesomeIcon icon={faMapMarker} style={{ marginRight: '7px', color: '#0ecade' }} />
+                    <FontAwesomeIcon icon={faMapMarkerAlt} style={{ marginRight: '7px', color: '#0ecade' }} />
                     Birmingham, UK
                   </div>
                 </div>
