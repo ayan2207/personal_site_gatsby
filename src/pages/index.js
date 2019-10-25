@@ -64,7 +64,7 @@ export default class IndexPage extends Component {
                   <h2 className='h2 text-light p-2 d-inline-block badge-primary rounded'>Hi, I'm Ayaan.</h2>
                 </div>
                 <div className="subtitle">
-                  <p className='p text-light p-2 mb-5 d-inline-block badge-secondary rounded'>I am a Web Developer and have a love for Design and Technology.</p>
+                  <p className='p text-light p-2 mb-5 d-inline-block rounded'>I am a Web Developer and have a love for Design and Technology.</p>
                 </div>
                 {/* <div className="hastags text-light justify-content-center justify-content-sm-start">
                   <div>Web & App Design</div>

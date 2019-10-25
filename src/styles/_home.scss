@@ -19,22 +19,25 @@
       color: $text-muted;
     }
   }
-  
 }
 
 .hero-container {
   // max-width: 650px;
   height: calc(100vh - 50px);
 
-  .title{
-    animation-name: slideDown;  
-    animation-duration: 1s;	  
+  .title {
+    animation-name: slideDown;
+    animation-duration: 1s;
     animation-timing-function: ease-out;
   }
 
-  .subtitle{
-    animation-name: slideDown;  
-    animation-duration: 0.5s;	  
+  .subtitle {
+    p {
+      font-size: 30px;
+      border-left: 5px solid $primary;
+    }
+    animation-name: slideDown;
+    animation-duration: 0.5s;
     animation-timing-function: ease-in;
   }
 
@@ -42,7 +45,7 @@
     display: flex;
     svg {
       #Hoodie {
-        fill: $primary;
+        fill: $secondary;
       }
     }
   }
@@ -80,43 +83,44 @@
 }
 
 @keyframes slideDown {
-	0% {
-		transform: translateY(-300px);
-	}
-	50%{
-		transform: translateY(8%);
-	}		
-	100% {
-		transform: translateY(0%);
-	}		
+  0% {
+    transform: translateY(-300px);
+  }
+  50% {
+    transform: translateY(8%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }
 
 @keyframes slideUp {
-	0% {
-		transform: translateY(-100%);
-	}
-	50%{
-		transform: translateY(8%);
-	}		
-	100% {
-		transform: translateY(0%);
-	}		
+  0% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(8%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }
 
 @include media-breakpoint-down(xs) {
   .hero-container {
     .occupation-container {
-      font-size: 15px !important;
+      font-size: 18px !important;
     }
     .hero-title-container {
       .title {
         h2 {
-          margin-bottom: 5px
+          margin-bottom: 5px;
         }
       }
-      .subtitle{
+      .subtitle {
         p {
-          font-size: 14px;
+          font-size: 25px;
+          border-right: 5px solid $primary;
         }
       }
     }
@@ -134,7 +138,7 @@
       font-size: 15px;
     }
     .occupation-container {
-      font-size: 17px;
+      font-size: 22px;
     }
   }
 }
