@@ -34,8 +34,6 @@
     "node-sass": "^4.11.0",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.12",
-    "react-canvas-draw": "^1.0.2",
-    "react-container-dimensions": "^1.4.1",
     "react-currency-input-field": "^0.2.0",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",

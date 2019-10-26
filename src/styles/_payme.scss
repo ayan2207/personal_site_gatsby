@@ -1,4 +1,7 @@
 .payment-container {
+  animation-name: slideIn;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-out;
   height: calc(100% - 48px);
   .form-control {
     color: white;
@@ -13,5 +16,20 @@
   .payment-container > div {
     height: 100%;
     width: 100%;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-7%);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateY(8%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
   }
 }

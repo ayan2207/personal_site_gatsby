@@ -2,13 +2,20 @@ import React, { Component } from 'react'
 import Avatar from 'avataaars'
 import { TwitterTimelineEmbed } from 'react-twitter-embed'
 import Layout from '../components/layout'
+import { Card } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAt, faBriefcase, faMapMarkerAlt, faMapMarker } from '@fortawesome/free-solid-svg-icons'
+import { faAt, faBriefcase, faMapMarkerAlt, faMapMarker, faGlobeAmericas, faMobileAlt, faServer, faCode, faCamera, faUserTie } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faInstagram, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import cmd from '../../static/cmd.jpg'
+import webapp from '../../static/webapp.jpg'
+import consultancy from '../../static/meeting.jpg'
+import mobileApps from '../../static/mobileapps.jpg'
+import cloudComputing from '../../static/cloudcomputing.jpeg'
+import mediaProduction from '../../static/mediaproduction.jpg'
 
 const moods = {
   default: {
-    eyeType: 'Happy',
+    eyeType: 'Side',
     mouthType: 'Default',
     accessoriesType: 'Default'
   },
@@ -38,8 +45,8 @@ export default class IndexPage extends Component {
         <main role='main' class='inner cover'>
           <div
             className='hero-container m-auto row justify-content-center align-items-center p-4'
-            // onMouseOver={() => this.setMood('cool')}
-            // onMouseLeave={() => this.setMood('default')}
+          // onMouseOver={() => this.setMood('cool')}
+          // onMouseLeave={() => this.setMood('default')}
           >
             <div className="person flex-column flex-sm-row text-center text-sm-left">
               <div class='avatar align-items-center text-center'>
@@ -64,7 +71,7 @@ export default class IndexPage extends Component {
                   <h2 className='h2 text-light p-2 d-inline-block badge-primary rounded'>Hi, I'm Ayaan.</h2>
                 </div>
                 <div className="subtitle">
-                  <p className='p text-light p-2 mb-5 d-inline-block rounded'>I am a Web Developer and have a love for Design and Technology.</p>
+                  <p className='p text-light p-2 mb-5 d-inline-block rounded'>I am a Web Developer and have a passion for Design and Technology.</p>
                 </div>
                 {/* <div className="hastags text-light justify-content-center justify-content-sm-start">
                   <div>Web & App Design</div>
@@ -85,79 +92,59 @@ export default class IndexPage extends Component {
                 </div>
                 <div className="d-flex text-light justify-content-center justify-content-sm-end social-pills">
                   <a href="http://github.com//ayan2207" traget="_blank" className="social-item">
-                    <FontAwesomeIcon icon={faGithub} style={{ color: 'white' }}/>
+                    <FontAwesomeIcon icon={faGithub} style={{ color: 'white' }} />
                   </a>
                   <a href="https://www.instagram.com/ayaanhedayati/" traget="_blank" className="social-item">
-                    <FontAwesomeIcon icon={faInstagram} style={{ color: '#d2765a' }}/>
+                    <FontAwesomeIcon icon={faInstagram} style={{ color: '#d2765a' }} />
                   </a>
                   <a href="https://twitter.com/ayaanhedayati" traget="_blank" className="social-item">
-                    <FontAwesomeIcon icon={faTwitter} style={{ color: '#216af3' }}/>
+                    <FontAwesomeIcon icon={faTwitter} style={{ color: '#216af3' }} />
                   </a>
                   <a href="https://www.linkedin.com/in/ayanhedayati/" traget="_blank" className="social-item">
-                    <FontAwesomeIcon icon={faLinkedin} style={{ color: '#149cff' }}/>
+                    <FontAwesomeIcon icon={faLinkedin} style={{ color: '#149cff' }} />
                   </a>
                 </div>
               </div>
             </div>
           </div>
-          {/* <div className='skills-container text-light'>
-            <div className='container-fluid p-0'>
-              <div className='row w-100 h-100 m-0'>
-                <div class='col-12 col-md-6 col-xl-4'>
-                  <div className='text-card'>
-                    <div className='title'>What I Do</div>
-                    <div className='subtitle'>Frontend Developer</div>
-                    <p class='font-weight-light'>
-                      I'm passionate about technology and have a love for design. Started my
-                      journey of a Web Developer from hacking together MySpace themes at school to learning and developing complex
-                      applications using the latest tech in the industry.
-                    </p>
-                    <p className='font-weight-light font-italic'>
-                      This website is my little space on the internet where I'll showcase some of
-                      the stuff I get up to through my journey.
-                    </p>
-                  </div>
-                  <div className="text-card">
-                    <div className='title pb-2'>Socials</div>
-                    <div className="social-pills w-100">
-                      <div className="social-item btn btn-dark">
-                        <FontAwesomeIcon icon={faGithub} />
-                      </div>
-                      <div className="social-item btn btn-dark">
-                        <FontAwesomeIcon icon={faInstagram} />
-                      </div>
-                      <div className="social-item btn btn-dark">
-                        <FontAwesomeIcon icon={faTwitter} />
-                      </div>
-                      <div className="social-item btn btn-dark">
-                        <FontAwesomeIcon icon={faLinkedin} />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class='col-12 col-md-6 col-xl-8 text-right'>
-                  <div className='text-card text-left text-md-right'>
-                    <div className='title'>Sometimes I Tweet</div>
-                    <div className='subtitle'>
-                      Follow me <a href='https://twitter.com/ayaanhedayati'>@ayaanhedayati</a>
-                    </div>
-                    <div className='tweet-timeline shadow-md'>
-                      <TwitterTimelineEmbed
-                        sourceType='profile'
-                        screenName='ayaanhedayati'
-                        theme='dark'
-                        transparent
-                        options={{ height: 300 }}
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class='col-12 col-xl-4' />
-                <div class='col-12 col-md-6 col-xl-4'>sdfsdfsdf</div>
-                <div class='col-12 col-md-6 col-xl-4 text-right'>sdfsdfsf</div>
-              </div>
-            </div>
-          </div> */}
+          <div className='skills-container p-3'>
+            <Card className="bg-dark text-white">
+              <Card.Img src={webapp} alt="Card image" />
+              <Card.ImgOverlay>
+                <Card.Title><FontAwesomeIcon icon={faGlobeAmericas} /> Web Applications</Card.Title>
+              </Card.ImgOverlay>
+            </Card>
+            <Card className="bg-dark text-white">
+              <Card.Img src={mobileApps} alt="Card image" />
+              <Card.ImgOverlay>
+                <Card.Title><FontAwesomeIcon icon={faMobileAlt} /> Mobile Apps</Card.Title>
+              </Card.ImgOverlay>
+            </Card>
+            <Card className="bg-dark text-white">
+              <Card.Img src={cloudComputing} alt="Card image" />
+              <Card.ImgOverlay>
+                <Card.Title><FontAwesomeIcon icon={faServer} /> Serverless Technology</Card.Title>
+              </Card.ImgOverlay>
+            </Card>
+            <Card className="bg-dark text-white">
+              <Card.Img src={cmd} alt="Card image" />
+              <Card.ImgOverlay>
+                <Card.Title><FontAwesomeIcon icon={faCode} /> API Design</Card.Title>
+              </Card.ImgOverlay>
+            </Card>
+            <Card className="bg-dark text-white">
+              <Card.Img src={mediaProduction} alt="Card image" />
+              <Card.ImgOverlay>
+                <Card.Title><FontAwesomeIcon icon={faCamera} /> Media Production</Card.Title>
+              </Card.ImgOverlay>
+            </Card>
+            <Card className="bg-dark text-white">
+              <Card.Img src={consultancy} alt="Card image" />
+              <Card.ImgOverlay>
+                <Card.Title><FontAwesomeIcon icon={faUserTie} /> Consultancy</Card.Title>
+              </Card.ImgOverlay>
+            </Card>
+          </div>
         </main>
       </Layout>
     )
