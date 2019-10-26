@@ -1,7 +1,7 @@
 .skills-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(458px, 1fr));
-  grid-template-rows: repeat(3, 300px);
+  grid-template-rows: repeat(2, 300px);
   grid-gap: 20px;
 
   .card {
@@ -84,18 +84,6 @@
       width: 270px;
     }
   }
-  .hastags {
-    font-size: 22px;
-    display: flex;
-    flex-wrap: wrap;
-    div {
-      padding: 10px;
-      background: darken($secondary, 25%);
-      margin-right: 5px;
-      margin-bottom: 10px;
-      border-radius: 5px;
-    }
-  }
   .social-pills {
     .social-item {
       padding: 10px;
@@ -161,9 +149,6 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
   .hero-container {
-    .hastags {
-      font-size: 15px;
-    }
     .occupation-container {
       font-size: 22px;
     }

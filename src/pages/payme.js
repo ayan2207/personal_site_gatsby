@@ -25,16 +25,18 @@ class Payme extends React.Component {
           <div className="form-container bg-dark m-auto">
             <div class="card text-white bg-dark">
               <div className="card-header bg-primary">
-                <h3 className="m-0">
-                  <FontAwesomeIcon icon={faMoneyCheckAlt} style={{marginRight: '10px'}}/>
-                  Secure Payment
-                  <FontAwesomeIcon className="float-right" icon={faStripe} style={{marginTop: '5px'}}/>
-                  </h3>
+                <h5 className="m-0">
+                  <FontAwesomeIcon icon={faMoneyCheckAlt} style={{ marginRight: '10px' }} />
+                  PayMe Secure Payment
+                </h5>
               </div>
               <div class="card-body">
                 <StripeProvider stripe={this.state.stripe}>
                   <Elements>
-                    <CheckoutForm />
+                    <>
+                      <p class="quote mb-4 p-2">Use this payment form to send me funds. Please only use this form if you have been advised.</p>
+                      <CheckoutForm />
+                    </>
                   </Elements>
                 </StripeProvider>
               </div>

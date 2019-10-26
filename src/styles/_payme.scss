@@ -3,6 +3,9 @@
   animation-duration: 0.7s;
   animation-timing-function: ease-out;
   height: calc(100% - 48px);
+  .quote {
+    border-left: 3px solid $primary;
+  }
   .form-control {
     color: white;
   }

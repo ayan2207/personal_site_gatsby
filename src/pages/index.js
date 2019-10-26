@@ -73,13 +73,6 @@ export default class IndexPage extends Component {
                 <div className="subtitle">
                   <p className='p text-light p-2 mb-5 d-inline-block rounded'>I am a Web Developer and have a passion for Design and Technology.</p>
                 </div>
-                {/* <div className="hastags text-light justify-content-center justify-content-sm-start">
-                  <div>Web & App Design</div>
-                  <div>SEO</div>
-                  <div>React</div>
-                  <div>Javascript</div>
-                  <div>Branding</div>
-                </div> */}
                 <div className="occupation-container d-flex text-light h4 mt-4 justify-content-center justify-content-sm-end">
                   <div className="my-3 mr-4">
                     <FontAwesomeIcon icon={faBriefcase} style={{ marginRight: '7px', color: '#c57105' }} />
