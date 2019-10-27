@@ -6,6 +6,7 @@
 @import "./variables";
 @import "node_modules/bootstrap/scss/_variables";
 @import "node_modules/bootstrap/scss/_mixins";
+@import "node_modules/bootstrap/scss/_images";
 @import "node_modules/bootstrap/scss/_root";
 @import "node_modules/bootstrap/scss/_media";
 @import "node_modules/bootstrap/scss/_reboot";
@@ -67,22 +68,22 @@
 }
 
 // Display breakpoints for DEV
-// body:after {
-//   color: white;
-//   font-size: 12px;
-//   padding: 5px;
-//   font-weight: bold;
-//   right: 10px;
-//   position: fixed;
-//   text-align: center;
-//   text-transform: uppercase;
-//   bottom: 10px;
-//   width: 200px;
-//   z-index: 9999;
-//   border: solid 1px #000000;
-//   @each $name, $value in $grid-breakpoints {
-//     @include media-breakpoint-up($name) {
-//       content: "#{$name} - min-width: #{$value}";
-//     }
-//   }
-// }
+body:after {
+  color: white;
+  font-size: 12px;
+  padding: 5px;
+  font-weight: bold;
+  right: 10px;
+  position: fixed;
+  text-align: center;
+  text-transform: uppercase;
+  bottom: 10px;
+  width: 200px;
+  z-index: 9999;
+  border: solid 1px #000000;
+  @each $name, $value in $grid-breakpoints {
+    @include media-breakpoint-up($name) {
+      content: "#{$name} - min-width: #{$value}";
+    }
+  }
+}

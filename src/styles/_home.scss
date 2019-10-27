@@ -1,7 +1,7 @@
 .skills-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(458px, 1fr));
-  grid-template-rows: repeat(2, 300px);
+  grid-template-columns: repeat(auto-fit, minmax(343px, 1fr));
+  grid-template-rows: repeat(6, 195px);
   grid-gap: 20px;
 
   .card {
@@ -118,7 +118,7 @@
   }
 }
 
-@include media-breakpoint-down(xs) {
+@include media-breakpoint-down(sm) {
   .hero-container {
     .occupation-container {
       font-size: 14px !important;
@@ -126,31 +126,47 @@
     .hero-title-container {
       .title {
         h2 {
+          font-size: 1.7rem;
           margin-bottom: 5px;
         }
       }
       .subtitle {
         p {
-          font-size: 25px;
+          font-size: 19px;
           border-right: 5px solid $primary;
         }
       }
     }
     .avatar {
       svg {
-        height: 220px;
+        height: 200px;
+      }
+    }
+  }
+  .skills-container {
+    grid-template-rows: repeat(6, 200px);
+    .card {
+      .card-title {
+        font-size: 22px;
       }
     }
   }
 }
 
-@include media-breakpoint-down(md) {
+@include media-breakpoint-only(md) {
   .skills-container {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(303px, 1fr));
   }
   .hero-container {
     .occupation-container {
       font-size: 22px;
     }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .skills-container {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-rows: repeat(3, 225px);
   }
 }
