@@ -51,7 +51,7 @@ export default function ContactForm(props) {
 				</>
 			}
 			{!status &&
-				<form onSubmit={handleSubmit} className="text-white">
+				<form data-netlify-recaptcha="true" onSubmit={handleSubmit} className="text-white">
 					<div className="form-group">
 						<label>Your Name:</label>
 						<input
