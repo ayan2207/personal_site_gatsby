@@ -44,6 +44,11 @@ export default function ContactForm(props) {
 
 	return (
 		<>
+			<form name="contact" netlify netlify-honeypot="bot-field" hidden>
+				<input type="text" name="name" />
+				<input type="email" name="email" />
+				<textarea name="message"></textarea>
+			</form>
 			{status &&
 				<>
 					<div className="alert alert-primary">
@@ -52,46 +57,46 @@ export default function ContactForm(props) {
 					<button className="btn btn-block btn-secondary" type="button" onClick={props.closeModal}>Close</button>
 				</>
 			}
-			{!status && <form name="contact" data-netlify="true"
-				data-netlify-honeypot="bot-field" onSubmit={handleSubmit} className="text-white">
-				<input type="hidden" name="form-name" value="contact" />
-				<div className="form-group">
-					<label>Your Name:</label>
-					<input
-						name="name"
-						type="text"
-						value={name}
-						className="form-control bg-dark border-secondary"
-						placeholder="Clark Kent"
-						onChange={handleChange}
-						required
-					/>
-				</div>
-				<div className="form-group">
-					<label>Your Email:</label>
-					<input
-						name="email"
-						type="email"
-						value={email}
-						className="form-control bg-dark border-secondary"
-						placeholder="clark@example.com"
-						onChange={handleChange}
-						required
-					/>
-				</div>
-				<div className="form-group">
-					<label>Message:</label>
-					<textarea
-						name="message"
-						value={message}
-						className="form-control bg-dark border-secondary"
-						placeholder="Write a message..."
-						onChange={handleChange}
-						required
-					/>
-				</div>
-				<button className="btn btn-block btn-secondary" type="submit">Send</button>
-			</form>}
+			{!status &&
+				<form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={handleSubmit} className="text-white">
+					<input type="hidden" name="form-name" value="contact" />
+					<div className="form-group">
+						<label>Your Name:</label>
+						<input
+							name="name"
+							type="text"
+							value={name}
+							className="form-control bg-dark border-secondary"
+							placeholder="Clark Kent"
+							onChange={handleChange}
+							required
+						/>
+					</div>
+					<div className="form-group">
+						<label>Your Email:</label>
+						<input
+							name="email"
+							type="email"
+							value={email}
+							className="form-control bg-dark border-secondary"
+							placeholder="clark@example.com"
+							onChange={handleChange}
+							required
+						/>
+					</div>
+					<div className="form-group">
+						<label>Message:</label>
+						<textarea
+							name="message"
+							value={message}
+							className="form-control bg-dark border-secondary"
+							placeholder="Write a message..."
+							onChange={handleChange}
+							required
+						/>
+					</div>
+					<button className="btn btn-block btn-secondary" type="submit">Send</button>
+				</form>}
 		</>
 	)
 }
