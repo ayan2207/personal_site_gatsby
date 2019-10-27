@@ -6,6 +6,12 @@ export default function ContactForm(props) {
 	const [message, setMessage] = useState('');
 	const [status, setStatus] = useState('');
 
+	const encode = (data) => {
+		return Object.keys(data)
+			.map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+			.join("&");
+	}
+
 	const handleSubmit = e => {
 		if (status) {
 			return props.closeModal()
@@ -14,8 +20,8 @@ export default function ContactForm(props) {
 
 		fetch("/", {
 			method: "POST",
-			// headers: { "Content-Type": 'multipart/form-data; boundary=random' },
-			body: { data }
+			headers: { "Content-Type": "application/x-www-form-urlencoded" },
+			body: encode(data)
 		})
 			.then(() => setStatus("Thanks! I will get back to you as soon as I can"))
 			.catch(error => setStatus("Form Submission Failed!"));
@@ -38,11 +44,6 @@ export default function ContactForm(props) {
 
 	return (
 		<>
-			<form name="contact" netlify netlify-honeypot="bot-field" hidden>
-				<input type="text" name="name" />
-				<input type="email" name="email" />
-				<textarea name="message"></textarea>
-			</form>
 			{status &&
 				<>
 					<div className="alert alert-primary">
@@ -51,7 +52,8 @@ export default function ContactForm(props) {
 					<button className="btn btn-block btn-secondary" type="button" onClick={props.closeModal}>Close</button>
 				</>
 			}
-			{!status && <form name="contact" onSubmit={handleSubmit} className="text-white">
+			{!status && <form name="contact" data-netlify="true"
+				data-netlify-honeypot="bot-field" onSubmit={handleSubmit} className="text-white">
 				<input type="hidden" name="form-name" value="contact" />
 				<div className="form-group">
 					<label>Your Name:</label>
@@ -88,9 +90,7 @@ export default function ContactForm(props) {
 						required
 					/>
 				</div>
-				<div className="form-group">
-					<button className="btn btn-block btn-secondary" type="submit">Send</button>
-				</div>
+				<button className="btn btn-block btn-secondary" type="submit">Send</button>
 			</form>}
 		</>
 	)

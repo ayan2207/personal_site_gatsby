@@ -45,7 +45,7 @@ const Layout = ({ children, pageInfo, path }) => {
 
   const modalTypes = [
     { id: 1, title: 'PayMe Secure Payment', size: 'md', component: <CheckoutForm /> },
-    { id: 2, title: 'Contact Form', size: 'lg', component: <ContactForm closeModal={handleClose}/> }
+    { id: 2, title: 'Contact Form', size: 'lg', component: <ContactForm closeModal={handleClose} /> }
   ]
   return (
     <>
