@@ -15,7 +15,7 @@ export default function HTML(props) {
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
-        <form name="contactform" netlify netlify-honeypot="__bf" hidden>
+        <form name="contact" netlify netlify-honeypot="__bf" hidden>
           <input type="text" name="name" />
           <input type="email" name="email" />
           <textarea name="message"></textarea>
