@@ -16,12 +16,10 @@ export default function ContactForm(props) {
 		if (status) {
 			return props.closeModal()
 		}
-		const data = { "form-name": "contact", name, email, message }
-
 		fetch("/", {
 			method: "POST",
 			headers: { "Content-Type": "application/x-www-form-urlencoded" },
-			body: encode(data)
+			body: encode({ "form-name": "contact", name, email, message })
 		})
 			.then(() => setStatus("Thanks! I will get back to you as soon as I can"))
 			.catch(error => setStatus("Form Submission Failed!"));
@@ -44,11 +42,6 @@ export default function ContactForm(props) {
 
 	return (
 		<>
-			<form name="contact" netlify netlify-honeypot="bot-field" hidden>
-				<input type="text" name="name" />
-				<input type="email" name="email" />
-				<textarea name="message"></textarea>
-			</form>
 			{status &&
 				<>
 					<div className="alert alert-primary">
@@ -58,8 +51,7 @@ export default function ContactForm(props) {
 				</>
 			}
 			{!status &&
-				<form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={handleSubmit} className="text-white">
-					<input type="hidden" name="form-name" value="contact" />
+				<form onSubmit={handleSubmit} className="text-white">
 					<div className="form-group">
 						<label>Your Name:</label>
 						<input
