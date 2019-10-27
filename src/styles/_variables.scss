@@ -4,6 +4,7 @@ $theme-colors: (
 	// "danger": #ff4136,
 );
 
+$dark: #1d2023;
 $body-bg: #111;
 
 // Fonts
@@ -20,7 +21,20 @@ $line-height-base: 1.6;
 
 $headings-font-weight: 400;
 
-$dark: #1d2023;
+
+// Modal
+$modal-content-color: white;
+$modal-content-bg: $dark;
+$modal-backdrop-opacity: 0.8;
+$modal-header-border-color: theme-color("secondary");
+$modal-fade-transform: scale(.8);
+// $modal-content-border-color: gba($black, .2) !default;
+// $modal-content-border-width:        $border-width !default;
+// $modal-content-border-radius:       $border-radius-lg !default;
+
+// Close
+$close-color:                       white !default;
+$close-text-shadow:                 0 1px 0 black !default;
 
 $grid-breakpoints: (
   xs: 0,

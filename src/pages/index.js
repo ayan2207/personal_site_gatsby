@@ -43,11 +43,7 @@ export default class IndexPage extends Component {
     return (
       <Layout {...this.props}>
         <main role='main' class='inner cover'>
-          <div
-            className='hero-container m-auto row justify-content-center align-items-center p-4'
-          // onMouseOver={() => this.setMood('cool')}
-          // onMouseLeave={() => this.setMood('default')}
-          >
+          <div className='hero-container m-auto row justify-content-center align-items-center p-4'>
             <div className="person flex-column flex-sm-row text-center text-sm-left">
               <div class='avatar align-items-center text-center'>
                 <Avatar

@@ -20,9 +20,13 @@
 @import "node_modules/bootstrap/scss/card";
 @import "node_modules/bootstrap/scss/badge";
 @import "node_modules/bootstrap/scss/alert";
+@import "node_modules/bootstrap/scss/modal";
+@import "node_modules/bootstrap/scss/transitions";
+@import "node_modules/bootstrap/scss/_close";
 
 
 // Components
+@import "./components/alert";
 
 // Pages
 @import "./_home";
@@ -32,22 +36,16 @@
 // Fontawsome
 @import 'node_modules/@fortawesome/fontawesome-svg-core/styles';
 
-html, #___gatsby {
-  height: 100%;
-}
+// html, body, #___gatsby {
+//     height: 100%;
+// }
 
-body {
-  margin: 0px;
-}
-
-div[role="group"][tabindex] {
-  height: 100%;
-}
+// body {
+//     margin: 0px;
+// }
 
 // div[role="group"][tabindex] {
-//   display: flex;
-//   flex-direction: column;
-//   flex-grow: 1;
+//     height: 100%;
 // }
 
 @include media-breakpoint-between(xs, sm) {

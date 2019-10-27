@@ -33,6 +33,7 @@ const createOptions = (fontSize, padding) => {
 
 class CheckoutForm extends Component {
   state = {
+    stripe: null,
     firstname: "",
     lastname: "",
     amount: 0,
@@ -52,6 +53,11 @@ class CheckoutForm extends Component {
       cardCvc: null,
     }
   };
+
+  componentDidMount() {
+    const stripe = window.Stripe(process.env.GATSBY_STRIPE_PUBLIC_KEY)
+    this.setState({ stripe })
+  }
 
   handleChange = (value, type) => {
     var cardTypes = ["cardNumber", "cardExpiry", "cardCvc"];
@@ -153,110 +159,117 @@ class CheckoutForm extends Component {
       </div>
     )
     return (
-      <form onSubmit={this.handleSubmit.bind(this)}>
-        <div className="row">
-          <div className="col">
-            <div className="form-group">
-              <label>First name</label>
-              <input
-                disabled={formDisabled}
-                onChange={(e) => this.handleChange(e.target.value, 'firstname')}
-                value={this.state.firstname}
-                type="text"
-                className={`form-control bg-dark border-secondary ${errors.firstname && 'is-invalid'} `}
-                placeholder="First name"
-              />
-              {errors.firstname && <span class="badge badge-pill badge-danger my-3">{errors.firstname}</span>}
-            </div>
-          </div>
-          <div className="col">
-            <div className="form-group">
-              <label>Last name</label>
-              <input
-                disabled={formDisabled}
-                onChange={(e) => this.handleChange(e.target.value, 'lastname')}
-                value={this.state.lastname}
-                type="text"
-                className={`form-control bg-dark border-secondary ${errors.lastname && 'is-invalid'} `}
-                placeholder="Last name"
-              />
-              {errors.lastname && <span class="badge badge-pill badge-danger my-3">{errors.lastname}</span>}
-            </div>
-          </div>
-        </div>
-        <div className="form-group">
-          <label>Amount</label>
-          <CurrencyInput
-            id="input-example"
-            placeholder="£0.00"
-            className={`form-control bg-dark border-secondary ${errors.amount && 'is-invalid'} `}
-            onChange={(value) => this.handleChange(value, 'amount')}
-            value={this.state.amount}
-            disabled={formDisabled}
-            prefix={'£'}
-          />
-          {errors.amount && <span class="badge badge-pill badge-danger my-3">{errors.amount}</span>}
-        </div>
-        <div className="form-group">
-          <label>Card Number</label>
-          <div className="input-group">
-            <div className="input-group-prepend">
-              <span className="input-group-text border-secondary bg-dark text-light">
-                <FontAwesomeIcon icon={faCreditCard} />
-              </span>
-            </div>
-            <div className="form-control bg-dark border-secondary">
-              <CardNumberElement
-                onChange={(value) => this.handleChange(value, 'cardNumber')}
-                disabled={formDisabled}
-                {...createOptions(this.props.fontSize)}
-              />
-            </div>
-            <div className="input-group-append">
-              <span className="input-group-text border-secondary bg-dark text-light">
-                <FontAwesomeIcon icon={faLock} />
-              </span>
-            </div>
-          </div>
-          <small id="emailHelp" class="form-text text-muted">16 digit number displayed on your card</small>
-          {errors.cardNumber && <span class="badge badge-pill badge-danger my-3">{errors.cardNumber}</span>}
-        </div>
-        <div className="row">
-          <div className="col-sm-6">
-            <div className="form-group">
-              <label>Expiry Date</label>
-              <div className="form-control bg-dark border-secondary">
-                <CardExpiryElement
-                  onChange={(value) => this.handleChange(value, 'cardExpiry')}
-                  disabled={formDisabled}
-                  {...createOptions(this.props.fontSize)}
-                />
+      <StripeProvider stripe={this.state.stripe}>
+        <>
+          <p class="alert alert-primary">Use this payment form to send me funds. Please only use this form if you have been advised to do so.</p>
+          <Elements>
+            <form onSubmit={this.handleSubmit.bind(this)}>
+              <div className="row">
+                <div className="col">
+                  <div className="form-group">
+                    <label>First name</label>
+                    <input
+                      disabled={formDisabled}
+                      onChange={(e) => this.handleChange(e.target.value, 'firstname')}
+                      value={this.state.firstname}
+                      type="text"
+                      className={`form-control bg-dark border-secondary ${errors.firstname && 'is-invalid'} `}
+                      placeholder="First name"
+                    />
+                    {errors.firstname && <span class="badge badge-pill badge-danger my-3">{errors.firstname}</span>}
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form-group">
+                    <label>Last name</label>
+                    <input
+                      disabled={formDisabled}
+                      onChange={(e) => this.handleChange(e.target.value, 'lastname')}
+                      value={this.state.lastname}
+                      type="text"
+                      className={`form-control bg-dark border-secondary ${errors.lastname && 'is-invalid'} `}
+                      placeholder="Last name"
+                    />
+                    {errors.lastname && <span class="badge badge-pill badge-danger my-3">{errors.lastname}</span>}
+                  </div>
+                </div>
               </div>
-              {errors.cardExpiry && <span class="badge badge-pill badge-danger my-3">{errors.cardExpiry}</span>}
-            </div>
-          </div>
-          <div className="col-sm-6">
-            <div class="form-group">
-              <label>CVC</label>
-              <div className="form-control bg-dark border-secondary">
-                <CardCVCElement
-                  onChange={(value) => this.handleChange(value, 'cardCvc')}
+              <div className="form-group">
+                <label>Amount</label>
+                <CurrencyInput
+                  id="input-example"
+                  placeholder="£0.00"
+                  className={`form-control bg-dark border-secondary ${errors.amount && 'is-invalid'} `}
+                  onChange={(value) => this.handleChange(value, 'amount')}
+                  value={this.state.amount}
                   disabled={formDisabled}
-                  required={true}
-                  {...createOptions(this.props.fontSize)}
+                  prefix={'£'}
                 />
+                {errors.amount && <span class="badge badge-pill badge-danger my-3">{errors.amount}</span>}
               </div>
-              {errors.cardCvc && <span class="badge badge-pill badge-danger my-3">{errors.cardCvc}</span>}
-            </div>
-          </div>
-        </div>
-        <button disabled={processing} className={`btn ${completed ? `btn-success` : 'btn-secondary'} btn-block`}>
-          {completed ? 'Payment Complete!' : 'Pay Now'}
-          {processing && <div className="float-right">
-            <FontAwesomeIcon icon={faSpinner} spin />
-          </div>}
-        </button>
-      </form>
+              <div className="form-group">
+                <label>Card Number</label>
+                <div className="input-group">
+                  <div className="input-group-prepend">
+                    <span className="input-group-text border-secondary bg-dark text-light">
+                      <FontAwesomeIcon icon={faCreditCard} />
+                    </span>
+                  </div>
+                  <div className="form-control bg-dark border-secondary">
+                    <CardNumberElement
+                      onChange={(value) => this.handleChange(value, 'cardNumber')}
+                      disabled={formDisabled}
+                      {...createOptions(this.props.fontSize)}
+                    />
+                  </div>
+                  <div className="input-group-append">
+                    <span className="input-group-text border-secondary bg-dark text-light">
+                      <FontAwesomeIcon icon={faLock} />
+                    </span>
+                  </div>
+                </div>
+                <small id="emailHelp" class="form-text text-muted">16 digit number displayed on your card</small>
+                {errors.cardNumber && <span class="badge badge-pill badge-danger my-3">{errors.cardNumber}</span>}
+              </div>
+              <div className="row">
+                <div className="col-sm-6">
+                  <div className="form-group">
+                    <label>Expiry Date</label>
+                    <div className="form-control bg-dark border-secondary">
+                      <CardExpiryElement
+                        onChange={(value) => this.handleChange(value, 'cardExpiry')}
+                        disabled={formDisabled}
+                        {...createOptions(this.props.fontSize)}
+                      />
+                    </div>
+                    {errors.cardExpiry && <span class="badge badge-pill badge-danger my-3">{errors.cardExpiry}</span>}
+                  </div>
+                </div>
+                <div className="col-sm-6">
+                  <div class="form-group">
+                    <label>CVC</label>
+                    <div className="form-control bg-dark border-secondary">
+                      <CardCVCElement
+                        onChange={(value) => this.handleChange(value, 'cardCvc')}
+                        disabled={formDisabled}
+                        required={true}
+                        {...createOptions(this.props.fontSize)}
+                      />
+                    </div>
+                    {errors.cardCvc && <span class="badge badge-pill badge-danger my-3">{errors.cardCvc}</span>}
+                  </div>
+                </div>
+              </div>
+              <button disabled={processing} className={`btn ${completed ? `btn-success` : 'btn-secondary'} btn-block`}>
+                {completed ? 'Payment Complete!' : 'Pay Now'}
+                {processing && <div className="float-right">
+                  <FontAwesomeIcon icon={faSpinner} spin />
+                </div>}
+              </button>
+            </form>
+          </Elements>
+        </>
+      </StripeProvider>
     );
   }
 }

@@ -1,15 +1,15 @@
-.navbar {
+nav {
   background-color: $body-bg;
-  .nav-item {
-    color: $text-muted;
-    margin: 0px 5px;
+  .navbar-nav {
     &.active {
-      color: white;
-      border-bottom: 2px solid white;
+      border-left: 2px solid $primary;
     }
-    &:hover {
-      color: map-get($theme-colors, "light");
-    }
+  }
+}
+
+.dynamic-modal {
+  .form-control {
+    color: white;
   }
 }
 

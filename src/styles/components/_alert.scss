@@ -1,0 +1,11 @@
+.alert {
+  background: transparent;
+  color: white;
+  border-width: 0px 0px 0px 2px;
+  &.alert-primary {
+    border-color: $primary;
+  }
+  &.alert-info {
+    border-color: $info;
+  }
+}
