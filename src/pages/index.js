@@ -26,10 +26,13 @@ const moods = {
   }
 }
 export default class IndexPage extends Component {
-  state = { mood: moods.default }
+  state = { mood: moods.default, contact: null }
 
   componentDidMount() {
     this.setMood('default')
+    if (typeof window !== undefined) {
+      this.setState({ contact: JSON.parse(window.localStorage.getItem("contact")) })
+    }
   }
 
   setMood(mood) {
@@ -40,6 +43,7 @@ export default class IndexPage extends Component {
 
   render() {
     const { accessoriesType, eyeType, mouthType } = this.state.mood
+    const { contact } = this.state
     return (
       <Layout {...this.props}>
         <main role='main' class='inner cover'>
@@ -64,7 +68,7 @@ export default class IndexPage extends Component {
               </div>
               <div class='hero-title-container d-flex justify-content-center flex-column'>
                 <div className="title">
-                  <h2 className='h2 text-light p-2 d-inline-block badge-primary rounded'>Hi, I'm Ayaan.</h2>
+                  <h2 className='h2 text-light p-2 d-inline-block badge-primary rounded'>Hi {contact ? contact.name.split(' ')[0] : ''}, I'm Ayaan.</h2>
                 </div>
                 <div className="subtitle">
                   <p className='p text-light p-2 mb-5 d-inline-block rounded'>I am a Web Developer and have a passion for Design and Technology.</p>

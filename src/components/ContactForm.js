@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 
 export default function ContactForm(props) {
-	const [name, setName] = useState('');
-	const [email, setEmail] = useState('');
+	let contact
+	if (typeof window !== undefined) {
+		contact = JSON.parse(window.localStorage.getItem("contact"))
+	}
+	const [name, setName] = useState(contact && contact.name || '');
+	const [email, setEmail] = useState(contact && contact.email || '');
 	const [message, setMessage] = useState('');
 	const [status, setStatus] = useState('');
 
@@ -21,11 +25,23 @@ export default function ContactForm(props) {
 			headers: { "Content-Type": "application/x-www-form-urlencoded" },
 			body: encode({ "form-name": "contact", name, email, message })
 		})
-			.then(() => setStatus("Thanks! I will get back to you as soon as I can"))
+			.then(() => {
+				if (typeof window !== undefined) {
+					window.localStorage.setItem("contact", JSON.stringify({ name, email }))
+				}
+				setStatus("Thanks! I will get back to you as soon as I can")
+			})
 			.catch(error => setStatus("Form Submission Failed!"));
 
 		e.preventDefault();
 	};
+
+	const forgetMe = () => {
+		if (typeof window !== undefined) {
+			window.localStorage.removeItem('contact')
+			window.location.reload()
+		}
+	}
 
 	const handleChange = e => {
 		const { name, value } = e.target
@@ -52,6 +68,14 @@ export default function ContactForm(props) {
 			}
 			{!status &&
 				<form data-netlify-recaptcha="true" onSubmit={handleSubmit} className="text-white">
+					{contact &&
+						<div className="alert alert-info">
+							<strong>Welcome back {contact.name.split(' ')[0]}!</strong>
+							<p className="m-0">
+								I can see you have emailed me before. Click <a href="#" class="badge badge-primary" onClick={forgetMe}>here</a> if you would like me to forget your details.
+							</p>
+						</div>
+					}
 					<div className="form-group">
 						<label>Your Name:</label>
 						<input
