@@ -81,58 +81,66 @@ export default class IndexPage extends Component {
                 </div>
                 <div className="d-flex text-light justify-content-center justify-content-sm-end social-pills">
                   <a href="http://github.com//ayan2207" traget="_blank" className="social-item">
-                    <FontAwesomeIcon icon={faGithub} style={{ color: 'white' }} />
+                    <FontAwesomeIcon icon={faGithub} className="github-icon" />
                   </a>
                   <a href="https://www.instagram.com/ayaanhedayati/" traget="_blank" className="social-item">
-                    <FontAwesomeIcon icon={faInstagram} style={{ color: '#d2765a' }} />
+                    <FontAwesomeIcon icon={faInstagram} className="instagram-icon" />
                   </a>
                   <a href="https://twitter.com/ayaanhedayati" traget="_blank" className="social-item">
-                    <FontAwesomeIcon icon={faTwitter} style={{ color: '#216af3' }} />
+                    <FontAwesomeIcon icon={faTwitter} className="twitter-icon" />
                   </a>
                   <a href="https://www.linkedin.com/in/ayanhedayati/" traget="_blank" className="social-item">
-                    <FontAwesomeIcon icon={faLinkedin} style={{ color: '#149cff' }} />
+                    <FontAwesomeIcon icon={faLinkedin} className="linkedin-icon" />
                   </a>
                 </div>
               </div>
             </div>
           </div>
           <div className='skills-container p-3'>
-            <Card className="bg-dark text-white">
-              <Card.Img src={webapp} alt="Card image" />
-              <Card.ImgOverlay>
-                <Card.Title><FontAwesomeIcon icon={faGlobeAmericas} /> Web Applications</Card.Title>
-              </Card.ImgOverlay>
-            </Card>
-            <Card className="bg-dark text-white">
-              <Card.Img src={mobileApps} alt="Card image" />
-              <Card.ImgOverlay>
-                <Card.Title><FontAwesomeIcon icon={faMobileAlt} /> Mobile Apps</Card.Title>
-              </Card.ImgOverlay>
-            </Card>
-            <Card className="bg-dark text-white">
-              <Card.Img src={cloudComputing} alt="Card image" />
-              <Card.ImgOverlay>
-                <Card.Title><FontAwesomeIcon icon={faServer} /> Serverless Technology</Card.Title>
-              </Card.ImgOverlay>
-            </Card>
-            <Card className="bg-dark text-white">
-              <Card.Img src={cmd} alt="Card image" />
-              <Card.ImgOverlay>
-                <Card.Title><FontAwesomeIcon icon={faCode} /> API Design</Card.Title>
-              </Card.ImgOverlay>
-            </Card>
-            <Card className="bg-dark text-white">
+            <div className="section text-light">
+              <h3>Things we can talk about...</h3>
+              <div className="grid">
+                <Card className="bg-dark text-white">
+                  <Card.Img src={webapp} alt="Card image" />
+                  <Card.ImgOverlay>
+                    <Card.Title><FontAwesomeIcon icon={faGlobeAmericas} /> Web Applications</Card.Title>
+                  </Card.ImgOverlay>
+                </Card>
+                <Card className="bg-dark text-white">
+                  <Card.Img src={mobileApps} alt="Card image" />
+                  <Card.ImgOverlay>
+                    <Card.Title><FontAwesomeIcon icon={faMobileAlt} /> Mobile Apps</Card.Title>
+                  </Card.ImgOverlay>
+                </Card>
+                <Card className="bg-dark text-white">
+                  <Card.Img src={cloudComputing} alt="Card image" />
+                  <Card.ImgOverlay>
+                    <Card.Title><FontAwesomeIcon icon={faServer} /> Serverless Technology</Card.Title>
+                  </Card.ImgOverlay>
+                </Card>
+                <Card className="bg-dark text-white">
+                  <Card.Img src={cmd} alt="Card image" />
+                  <Card.ImgOverlay>
+                    <Card.Title><FontAwesomeIcon icon={faCode} /> API Design</Card.Title>
+                  </Card.ImgOverlay>
+                </Card>
+                {/* <Card className="bg-dark text-white">
               <Card.Img src={mediaProduction} alt="Card image" />
               <Card.ImgOverlay>
                 <Card.Title><FontAwesomeIcon icon={faCamera} /> Media Production</Card.Title>
               </Card.ImgOverlay>
-            </Card>
-            <Card className="bg-dark text-white">
-              <Card.Img src={consultancy} alt="Card image" />
-              <Card.ImgOverlay>
-                <Card.Title><FontAwesomeIcon icon={faUserTie} /> Consultancy</Card.Title>
-              </Card.ImgOverlay>
-            </Card>
+            </Card> */}
+                <Card className="bg-dark text-white">
+                  <Card.Img src={consultancy} alt="Card image" />
+                  <Card.ImgOverlay>
+                    <Card.Title><FontAwesomeIcon icon={faUserTie} /> Consultancy</Card.Title>
+                  </Card.ImgOverlay>
+                </Card>
+              </div>
+            </div>
+            {/* <div className="section text-light">
+              <h3>My Skills</h3>
+            </div> */}
           </div>
         </main>
       </Layout>
