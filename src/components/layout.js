@@ -64,13 +64,13 @@ const Layout = ({ children, pageInfo, path }) => {
         <Navbar sticky="top" variant="dark">
           <Navbar.Brand href="#home">{`>`}</Navbar.Brand>
           <Nav className="ml-auto">
-            <Button
+            {/* <Button
               variant="secondary"
               className="mr-2"
               onClick={() => handleShow(modalTypes[0])}
             >
               PayMe
-            </Button>
+            </Button> */}
             <Button variant="primary" onClick={() => handleShow(modalTypes[1])}>
               Contact
             </Button>
