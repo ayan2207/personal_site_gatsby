@@ -1,9 +1,9 @@
 import React from 'react'
 import { StaticQuery, useStaticQuery, graphql } from "gatsby"
-import ProductItem from '../components/productItem'
+import ProductItem from '../src/components/productItem'
 import { Elements, StripeProvider } from 'react-stripe-elements';
-import CheckoutForm from '../components/CheckoutForm';
-import Layout from '../components/layout'
+import CheckoutForm from '../src/components/CheckoutForm';
+import Layout from '../src/components/layout'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMoneyCheck, faMoneyCheckAlt } from '@fortawesome/free-solid-svg-icons'
 import { faStripe } from '@fortawesome/free-brands-svg-icons';
@@ -31,30 +31,3 @@ class Payme extends React.Component {
     )
   }
 }
-
-
-export default () => (
-  <StaticQuery
-    query={graphql`
-      query SkusForProduct {
-        skus: allStripeSku {
-          edges {
-            node {
-              id
-              currency
-              price
-              attributes {
-                name
-              }
-            }
-          }
-        }
-      }
-    `}
-    render={(skus) => {
-      return (
-        <Payme {...skus} />
-      )
-    }}
-  />
-)

@@ -46,10 +46,10 @@ export default class IndexPage extends Component {
     const { contact } = this.state
     return (
       <Layout {...this.props}>
-        <main role='main' class='inner cover'>
+        <main role='main' className='inner cover'>
           <div className='hero-container m-auto row justify-content-center align-items-center p-4'>
             <div className="person flex-column flex-sm-row text-center text-sm-left">
-              <div class='avatar align-items-center text-center'>
+              <div className='avatar align-items-center text-center'>
                 <Avatar
                   avatarStyle='transparent'
                   topType='ShortHairShortFlat'
@@ -66,12 +66,12 @@ export default class IndexPage extends Component {
                   size='100px'
                 />
               </div>
-              <div class='hero-title-container d-flex justify-content-center flex-column'>
+              <div className='hero-title-container d-flex justify-content-center flex-column'>
                 <div className="title">
-                  <h2 className='h2 text-light p-2 d-inline-block badge-primary rounded'>Hi {contact ? contact.name.split(' ')[0] : ''}, I'm Ayaan.</h2>
+                  <h2 className='h2 text-light p-2 d-inline-block badge-primary rounded'>Hi {contact ? contact.name.split(' ')[0] : ''}, I'm Ayan.</h2>
                 </div>
                 <div className="subtitle">
-                  <p className='p text-light p-2 mb-5 d-inline-block rounded'>I am a Web Developer and have a passion for Design and Technology.</p>
+                  <p className='p text-light p-2 mb-5 d-inline-block rounded'>I'm a Software Developer and have a passion for Design & Technology</p>
                 </div>
                 <div className="occupation-container d-flex text-light h4 mt-4 justify-content-center justify-content-sm-end">
                   <div className="my-3 mr-4">
@@ -100,7 +100,7 @@ export default class IndexPage extends Component {
               </div>
             </div>
           </div>
-          <div className='skills-container p-3'>
+          {/* <div className='skills-container p-3'>
             <div className="section text-light">
               <h3>Things we can talk about...</h3>
               <div className="grid">
@@ -127,13 +127,7 @@ export default class IndexPage extends Component {
                   <Card.ImgOverlay>
                     <Card.Title><FontAwesomeIcon icon={faCode} /> API Design</Card.Title>
                   </Card.ImgOverlay>
-                </Card>
-                {/* <Card className="bg-dark text-white">
-              <Card.Img src={mediaProduction} alt="Card image" />
-              <Card.ImgOverlay>
-                <Card.Title><FontAwesomeIcon icon={faCamera} /> Media Production</Card.Title>
-              </Card.ImgOverlay>
-            </Card> */}
+                </Card>sdfsdffs
                 <Card className="bg-dark text-white">
                   <Card.Img src={consultancy} alt="Card image" />
                   <Card.ImgOverlay>
@@ -142,10 +136,7 @@ export default class IndexPage extends Component {
                 </Card>
               </div>
             </div>
-            {/* <div className="section text-light">
-              <h3>My Skills</h3>
-            </div> */}
-          </div>
+          </div> */}
         </main>
       </Layout>
     )
