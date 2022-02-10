@@ -31,7 +31,7 @@
     "gatsby-source-filesystem": "^2.0.28",
     "gatsby-source-stripe": "^3.0.4",
     "gatsby-transformer-remark": "^2.3.8",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.12",
     "react-currency-input-field": "^0.2.0",
